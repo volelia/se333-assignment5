@@ -16,14 +16,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          architecture: 'x64'
-          cache: maven
+          architecture: x64
 
       - name: Install Linter
         run: echo "Checkstyle plugin will run automatically in Maven validate phase"
 
       - name: Run Checkstyle
-        run: mvn -B -DskipTests=true validate
+        run: mvn -q -DskipTests=true validate
 
       - name: Upload Checkstyle Result
         uses: actions/upload-artifact@v4
@@ -33,7 +32,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Run Maven Test
-        run: mvn -B test
+        run: mvn -q test
 
       - name: Jacoco Report
         uses: actions/upload-artifact@v4
