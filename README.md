@@ -47,4 +47,4 @@ the workflow file is located at:
 ## notes
 - checkstyle is configured to not fail the build on warnings
 - jacoco automatically runs after tests
-- the workflow badge at the top updates automatically after every push  
+- the workflow badge at the top updates automatically after every push
