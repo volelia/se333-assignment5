@@ -48,3 +48,16 @@ the workflow file is located at:
 - checkstyle is configured to not fail the build on warnings
 - jacoco automatically runs after tests
 - the workflow badge at the top updates automatically after every push  
+
+## part 3 – amazon tests
+write larger unit and integration tests for the Amazon package.
+
+### unit tests
+- tested each pricing rule (`RegularCost`, `DeliveryPrice`, `ExtraCostForElectronics`) individually.
+- verified combinations of rules in `Amazon.calculate()`.
+- used an in-memory fake `ShoppingCart` to avoid database dependency.
+
+### integration tests
+- tested full flow using the real `Database` and `ShoppingCartAdaptor`.
+- verified item insertion, retrieval, and total price calculations with real HSQLDB.
+- all integration tests passed successfully.
